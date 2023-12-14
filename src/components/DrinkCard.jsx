@@ -21,7 +21,6 @@ const DrinkCard = ({ drink }) => {
             {drink.strDrink}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {<Link to={`/drink/details/${drink.idDrink}`}>Voir la recette</Link>}
            <p>A consommer avec modération sauf si c'est votre cocktail préféré</p> 
           </Typography>
         </CardContent>
