@@ -1,8 +1,17 @@
 import { Box, CircularProgress } from "@mui/material";
 import DrinkCard from "./DrinkCard";
+import { useState, useEffect } from "react";
 
-const LastDrinks = ({ drinks }) => {
+const LastDrinks = () => {
+    const [drinks, setDrinks] = useState(null);
+    useEffect(() => {
+        (async () => {
+            const drinksReponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s");
+            const drinksReponseData = await drinksReponse.json();
 
+            setDrinks(drinksReponseData.drinks);
+        })();
+    }, []);
     const lastFourDrinks =  drinks ? drinks.slice(-4) : null ;
     
     console.log(drinks);
@@ -11,7 +20,7 @@ const LastDrinks = ({ drinks }) => {
             <section>
                 {lastFourDrinks ? (
                     <>
-                    <h3>Les quatre dernièrs cocktails :</h3>
+                    <h3>Nos quatre derniers cocktails :</h3>
                         {lastFourDrinks.map((drink) => {
                             return (
                                 <>
