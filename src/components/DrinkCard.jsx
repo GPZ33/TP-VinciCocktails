@@ -20,7 +20,7 @@ const DrinkCard = ({ drink }) => {
             {drink.strDrink}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-           <p>A consommer avec modération sauf si c'est votre cocktail préféré</p> 
+           <p>A consommer avec modération sauf si c'est votre verre préféré</p> 
           </Typography>
         </CardContent>
       </CardActionArea>
