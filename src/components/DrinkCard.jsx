@@ -9,7 +9,7 @@ const DrinkCard = ({ drink }) => {
   return (
     <Card sx={{ maxWidth: 345 }} className='drinks'>
       <CardActionArea href={`/drink/details/${drink.idDrink}`}>
-        <CardMedia
+        <CardMedia 
           component="img"
           height="140"
           image={drink.strDrinkThumb}

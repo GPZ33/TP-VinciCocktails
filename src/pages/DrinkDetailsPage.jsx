@@ -42,38 +42,19 @@ const DrinkDetailsPage = () => {
             {drink ? (
                 <>
                     <Header />
-                    <h1>{drink.strCategory + " : " + drink.strDrink}</h1>
-                    <h5>{"Date : " + drink.dateModified}</h5>
-                    <img src={drink.strDrinkThumb}></img>
-                    <ul> <h5>Ingrédients :</h5>
-                        {renderIngredients()}
-                    </ul>
-                    <h5>Consignes</h5>
-                    <p>{drink.strInstructions}</p>
-                    <div class="card mb-3">
-                        <img src={drink.strDrinkThumb} class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">{drink.strCategory + " : " + drink.strDrink}</h5>
-                            <p class="card-text">{renderIngredients()}</p>
-                            <p class="card-text">{drink.strInstructions}</p>
-                            <p class="card-text"><small class="text-body-secondary">{drink.dateModified}</small></p>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style={{ maxWidth: '540px' }}>
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src={drink.strDrinkThumb} class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{drink.strCategory + " : " + drink.strDrink}</h5>
-                                    <p class="card-text">{renderIngredients()}</p>
-                                    <p class="card-text">{drink.strInstructions}</p>
-                                    <p class="card-text"><small class="text-body-secondary">{drink.dateModified}</small></p>
-                                </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <div class="card mb-3" style={{ maxWidth: '540px', marginTop: '20px', boxShadow: '44px 0px 50px 0px rgba(0,0,0,0.1)' }}>
+                            <img src={drink.strDrinkThumb} class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">{drink.strCategory + " : " + drink.strDrink}</h5>
+                               <h6 class="card-title"><Link to={`/category/drinks/${drink.strCategory}`}> Les autres {drink.strCategory} </Link> </h6> 
+                                <p class="card-text">{renderIngredients()}</p>
+                                <p class="card-text">{drink.strInstructions}</p>
+                                <p class="card-text"><small class="text-body-secondary">{drink.dateModified}</small></p>
                             </div>
                         </div>
                     </div>
+
                     <Footer />
                 </>
             ) : (
@@ -81,6 +62,7 @@ const DrinkDetailsPage = () => {
             )}
         </div>
     );
+    
 }
 
 export default DrinkDetailsPage;

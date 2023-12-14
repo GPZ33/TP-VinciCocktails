@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Box, CircularProgress } from "@mui/material";
-import DrinkCard from "../components/DrinkCard";
 import { Link } from "react-router-dom";
 
 const AllIngredientsPage = () => {

@@ -5,18 +5,33 @@
 .Footer-writer {
   color:white;
 }
+.App-footer {
+  flex-shrink: 0; /* Empêche le footer de se réduire en cas de contenu supplémentaire */
+  width: 100%;
+}
 
 .drinks {
   display: inline-block;
+  margin-right: 20px;
+  margin-top: 10px;
+  box-shadow: 30px 30px 50px 22px rgba(0,0,0,0.1);
+  border-radius: 10rem;
+  background-color: #333; /* Couleur foncée correspondant à votre thème dark */
+  color: white; /* Couleur du texte */
 }
 
-.card-img-top{
-  width: 150px;
-  height: 150px;
-  border: 1px solid;
-  object-fit: contain;
-  
+.drinks img {
+  width: 100%; /* Réglez la largeur à 100% pour qu'elle s'adapte à la largeur de la carte */
+  height: auto; /* La hauteur sera ajustée proportionnellement à la largeur */
 }
+
+.card-img-top {
+  width: 100%; /* Pour occuper toute la largeur de la div */
+  height: auto; /* Pour conserver les proportions de l'image */
+  object-fit: cover; /* Pour couvrir la totalité de l'espace disponible */
+}
+
+
 .img-fluid {
   width: 100%;
   height: 100%;

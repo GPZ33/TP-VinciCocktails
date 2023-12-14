@@ -20,6 +20,7 @@ const AllCoocktailsPage = () => {
     return (
         <>
             <Header />
+            <body>
             <h1>Nos cocktails</h1>
             <div>
             {cocktails ? (
@@ -42,6 +43,7 @@ const AllCoocktailsPage = () => {
                     </>
                 )}
             </div>
+            </body>
             <Footer />
         </>
         

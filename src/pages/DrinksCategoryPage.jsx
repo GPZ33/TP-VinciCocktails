@@ -20,7 +20,6 @@ const DrinksCategoryPage = () => {
     }, []);
     console.log(drinksCategory, "heeeey");
 
-
     return (
         <>
         <div>

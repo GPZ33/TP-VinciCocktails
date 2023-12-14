@@ -10,6 +10,7 @@ import DrinksCategoryPage from './pages/DrinksCategoryPage';
 import AllCoocktailsPage from './pages/AllCocktailsPage';
 import AllIngredientsPage from './pages/AllIngredientsPage';
 import IngredientDrinksPage from './pages/IngredientDrinksPage';
+import Eror404Page from './pages/Eror404Page';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cocktails" element={<AllCoocktailsPage />} />
         <Route path="/ingredients" element={<AllIngredientsPage />} />
         <Route path="/ingredient/drinks/:ingredient" element={<IngredientDrinksPage />} />
+        <Route path="*" element={<Eror404Page />}/>
       </Routes>
     </BrowserRouter>
   );
