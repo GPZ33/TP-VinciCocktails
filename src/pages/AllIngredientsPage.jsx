@@ -15,19 +15,18 @@ const AllIngredientsPage = () => {
             setIngredients(ingredientsResponseData.drinks);
         })();
     }, []);
-    console.log(ingredients);
 
     return (
         <>
             <Header />
             <h1>Nos ingrédients</h1>
             <div>
-            {ingredients ? (
+                {ingredients ? (
                     <>
                         {ingredients.map((ingredient) => {
                             return (
                                 <h3>
-                                <Link to={`/ingredient/drinks/${ingredient.strIngredient1}`}> {ingredient.strIngredient1} </Link>
+                                    <Link to={`/ingredient/drinks/${ingredient.strIngredient1}`}> {ingredient.strIngredient1} </Link>
                                 </h3>
                             );
                         })}
@@ -44,7 +43,6 @@ const AllIngredientsPage = () => {
             </div>
             <Footer />
         </>
-        
     );
 }
 

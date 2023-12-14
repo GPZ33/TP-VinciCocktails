@@ -18,24 +18,22 @@ const DrinksCategoryPage = () => {
             setDrinksCategory(drinksCategoryResponseData.drinks);
         })();
     }, []);
-    console.log(drinksCategory, "heeeey");
 
     return (
         <>
-        <div>
-            <Header />
-            {drinksCategory ? (
+            <div>
+                <Header />
+                {drinksCategory ? (
                     <>
                         {drinksCategory.map((drink) => {
                             return (
-                                <>  
-                                <DrinkCard drink={drink} />
+                                <>
+                                    <DrinkCard drink={drink} />
                                 </>
                             );
                         })}
                     </>
                 ) : (
-
                     <>
                         <Box sx={{ display: 'flex' }}>
                             Chargement...
@@ -43,8 +41,8 @@ const DrinksCategoryPage = () => {
                         </Box>
                     </>
                 )}
-        </div>
-        <Footer />
+            </div>
+            <Footer />
         </>
     );
 }

@@ -8,12 +8,11 @@ const HomePage = () => {
     return (
         <>
             <Header />
-           <h1>Bienvenue sur Vinci Cocktails !</h1> 
+            <h1>Bienvenue sur Vinci Cocktails !</h1>
             <RandomCategory />
             <LastDrinks />
             <Footer />
         </>
-
     );
 }
 

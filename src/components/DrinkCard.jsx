@@ -9,7 +9,7 @@ const DrinkCard = ({ drink }) => {
   return (
     <Card sx={{ maxWidth: 345 }} className='drinks'>
       <CardActionArea href={`/drink/details/${drink.idDrink}`}>
-        <CardMedia 
+        <CardMedia
           component="img"
           height="140"
           image={drink.strDrinkThumb}
@@ -20,7 +20,7 @@ const DrinkCard = ({ drink }) => {
             {drink.strDrink}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-           <p>A consommer avec modération sauf si c'est votre verre préféré</p> 
+            <p>A consommer avec modération sauf si c'est votre verre préféré</p>
           </Typography>
         </CardContent>
       </CardActionArea>

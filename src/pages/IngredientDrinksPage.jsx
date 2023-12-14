@@ -18,18 +18,17 @@ const IngredientDrinksPage = () => {
             setIngredientDrinks(ingredientDrinksResponseData.drinks);
         })();
     }, []);
-    console.log(ingredientDrinks);
 
     return (
         <>
-        <div>
-            <Header />
-            {ingredientDrinks ? (
+            <div>
+                <Header />
+                {ingredientDrinks ? (
                     <>
                         {ingredientDrinks.map((drink) => {
                             return (
-                                <>  
-                                <DrinkCard drink={drink} />
+                                <>
+                                    <DrinkCard drink={drink} />
                                 </>
                             );
                         })}
@@ -43,8 +42,8 @@ const IngredientDrinksPage = () => {
                         </Box>
                     </>
                 )}
-        </div>
-        <Footer />
+            </div>
+            <Footer />
         </>
     );
 }

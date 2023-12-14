@@ -15,38 +15,35 @@ const AllCoocktailsPage = () => {
             setCocktails(cocktailsResponseData.drinks);
         })();
     }, []);
-    console.log(cocktails);
 
     return (
         <>
             <Header />
             <body>
-            <h1>Nos cocktails</h1>
-            <div>
-            {cocktails ? (
-                    <>
-                        {cocktails.map((cocktail) => {
-                            return (
-                                <>
-                                <DrinkCard drink={cocktail} />
-                                </>
-                            );
-                        })}
-                    </>
-                ) : (
-
-                    <>
-                        <Box sx={{ display: 'flex' }}>
-                            Chargement...
-                            <CircularProgress />
-                        </Box>
-                    </>
-                )}
-            </div>
+                <h1>Nos cocktails</h1>
+                <div>
+                    {cocktails ? (
+                        <>
+                            {cocktails.map((cocktail) => {
+                                return (
+                                    <>
+                                        <DrinkCard drink={cocktail} />
+                                    </>
+                                );
+                            })}
+                        </>
+                    ) : (
+                        <>
+                            <Box sx={{ display: 'flex' }}>
+                                Chargement...
+                                <CircularProgress />
+                            </Box>
+                        </>
+                    )}
+                </div>
             </body>
             <Footer />
         </>
-        
     );
 }
 

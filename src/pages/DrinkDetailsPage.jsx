@@ -3,12 +3,9 @@ import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-
-
 const DrinkDetailsPage = () => {
 
     const { id } = useParams();
-
     const [drink, setDrink] = useState(null);
 
     useEffect(() => {
@@ -18,7 +15,6 @@ const DrinkDetailsPage = () => {
             setDrink(drinkResponseData.drinks[0]);
         })();
     }, []);
-    console.log(drink);
 
     const renderIngredients = () => {
         const ingredients = [];
@@ -47,14 +43,13 @@ const DrinkDetailsPage = () => {
                             <img src={drink.strDrinkThumb} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">{drink.strCategory + " : " + drink.strDrink}</h5>
-                               <h6 class="card-title"><Link to={`/category/drinks/${drink.strCategory}`}> Les autres {drink.strCategory} </Link> </h6> 
+                                <h6 class="card-title"><Link to={`/category/drinks/${drink.strCategory}`}> Les autres {drink.strCategory} </Link> </h6>
                                 <p class="card-text">{renderIngredients()}</p>
                                 <p class="card-text">{drink.strInstructions}</p>
                                 <p class="card-text"><small class="text-body-secondary">{drink.dateModified}</small></p>
                             </div>
                         </div>
                     </div>
-
                     <Footer />
                 </>
             ) : (
@@ -62,7 +57,6 @@ const DrinkDetailsPage = () => {
             )}
         </div>
     );
-    
 }
 
 export default DrinkDetailsPage;

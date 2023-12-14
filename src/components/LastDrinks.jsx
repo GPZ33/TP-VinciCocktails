@@ -12,25 +12,23 @@ const LastDrinks = () => {
             setDrinks(drinksReponseData.drinks);
         })();
     }, []);
-    const lastFourDrinks =  drinks ? drinks.slice(-4) : null ;
-    
-    console.log(drinks);
+    const lastFourDrinks = drinks ? drinks.slice(-4) : null;
+
     return (
         <>
             <section>
                 {lastFourDrinks ? (
                     <>
-                    <h3>Nos quatre derniers cocktails :</h3>
+                        <h3>Nos quatre derniers cocktails :</h3>
                         {lastFourDrinks.map((drink) => {
                             return (
                                 <>
-                                <DrinkCard drink={drink} />
+                                    <DrinkCard drink={drink} />
                                 </>
                             );
                         })}
                     </>
                 ) : (
-
                     <>
                         <Box sx={{ display: 'flex' }}>
                             Chargement...

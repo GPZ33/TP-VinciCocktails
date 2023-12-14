@@ -16,8 +16,6 @@ const CategoriesDrinkPage = () => {
         })();
     }, []);
 
-    console.log(categories);
-
     return (
         <>
             <Header />
@@ -27,13 +25,12 @@ const CategoriesDrinkPage = () => {
                         {categories.map((categories) => {
                             return (
                                 <h3>
-                                <Link to={`/category/drinks/${categories.strCategory}`}> {categories.strCategory} </Link>
+                                    <Link to={`/category/drinks/${categories.strCategory}`}> {categories.strCategory} </Link>
                                 </h3>
                             );
                         })}
                     </>
                 ) : (
-
                     <>
                         <Box sx={{ display: 'flex' }}>
                             Chargement...
@@ -44,7 +41,6 @@ const CategoriesDrinkPage = () => {
             </div>
             <Footer />
         </>
-
     );
 }
 

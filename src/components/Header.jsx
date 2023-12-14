@@ -36,8 +36,6 @@ const Header = () => {
     setSearchResults(filteredDrink);
   };
 
-  console.log(inputText);
-  console.log(searchResults, "mais t'es ou mais t'es pas la");
   return (
     <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container fluid>

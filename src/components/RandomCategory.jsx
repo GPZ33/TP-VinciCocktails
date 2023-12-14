@@ -14,10 +14,8 @@ const RandomCategory = ({ drinks }) => {
         })();
     }, []);
 
-    console.log(categories);
     const randomCategory = categories ? categories[Math.floor(Math.random() * categories.length)] : null;
 
-    console.log(randomCategory, "random");
     return (
         <>
             <div>
@@ -26,7 +24,6 @@ const RandomCategory = ({ drinks }) => {
                         <h3>On vous conseille ces verres (full random) : <Link to={`/category/drinks/${randomCategory.strCategory}`}> {randomCategory.strCategory} </Link></h3>
                     </>
                 ) : (
-
                     <>
                         <Box sx={{ display: 'flex' }}>
                             Chargement...

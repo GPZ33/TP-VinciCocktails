@@ -15,25 +15,22 @@ const AllDrinksPage = () => {
         })();
     }, []);
 
-    console.log(drinks);
-
     return (
         <>
             <Header />
             <h1>Nos verres</h1>
             <div>
-            {drinks ? (
+                {drinks ? (
                     <>
                         {drinks.drinks.map((drink) => {
                             return (
                                 <>
-                                <DrinkCard drink={drink} />
+                                    <DrinkCard drink={drink} />
                                 </>
                             );
                         })}
                     </>
                 ) : (
-
                     <>
                         <Box sx={{ display: 'flex' }}>
                             Chargement...
@@ -44,9 +41,7 @@ const AllDrinksPage = () => {
             </div>
             <Footer />
         </>
-        
     );
-
 }
 
 export default AllDrinksPage;
