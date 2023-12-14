@@ -21,6 +21,9 @@ const Header = () => {
             <Nav.Link><Link to="/">Home</Link></Nav.Link>
             
             <Nav.Link><Link to="/drinks">Nos verres</Link></Nav.Link>
+            <Nav.Link><Link to="/cocktails">Nos cocktails</Link></Nav.Link>
+            <Nav.Link><Link to="/categories">Nos categories</Link></Nav.Link>
+            <Nav.Link><Link to="/ingredients">Nos ingredients</Link></Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">

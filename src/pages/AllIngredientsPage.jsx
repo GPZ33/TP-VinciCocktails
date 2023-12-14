@@ -3,32 +3,33 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Box, CircularProgress } from "@mui/material";
 import DrinkCard from "../components/DrinkCard";
+import { Link } from "react-router-dom";
 
-const AllDrinksPage = () => {
-    const [drinks, setDrinks] = useState(null);
+const AllIngredientsPage = () => {
+    const [ingredients, setIngredients] = useState(null);
+
     useEffect(() => {
         (async () => {
-            const drinksReponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s");
-            const drinksReponseData = await drinksReponse.json();
+            const ingredientsResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list");
+            const ingredientsResponseData = await ingredientsResponse.json();
 
-            setDrinks(drinksReponseData);
+            setIngredients(ingredientsResponseData.drinks);
         })();
     }, []);
-
-    console.log(drinks);
+    console.log(ingredients);
 
     return (
         <>
             <Header />
-            <h1>Nos verres</h1>
+            <h1>Nos ingrédients</h1>
             <div>
-            {drinks ? (
+            {ingredients ? (
                     <>
-                        {drinks.drinks.map((drink) => {
+                        {ingredients.map((ingredient) => {
                             return (
-                                <>
-                                <DrinkCard drink={drink} />
-                                </>
+                                <h3>
+                                <Link to={`/ingredient/drinks/${ingredient.strIngredient1}`}> {ingredient.strIngredient1} </Link>
+                                </h3>
                             );
                         })}
                     </>
@@ -46,7 +47,6 @@ const AllDrinksPage = () => {
         </>
         
     );
-
 }
 
-export default AllDrinksPage;
+export default AllIngredientsPage;

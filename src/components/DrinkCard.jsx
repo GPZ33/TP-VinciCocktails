@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const DrinkCard = ({ drink }) => {
   return (
     <Card sx={{ maxWidth: 345 }} className='drinks'>
-      <CardActionArea>
+      <CardActionArea href={`/drink/details/${drink.idDrink}`}>
         <CardMedia
           component="img"
           height="140"

@@ -3,31 +3,31 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Box, CircularProgress } from "@mui/material";
 import DrinkCard from "../components/DrinkCard";
+const AllCoocktailsPage = () => {
 
-const AllDrinksPage = () => {
-    const [drinks, setDrinks] = useState(null);
+    const [cocktails, setCocktails] = useState(null);
+
     useEffect(() => {
         (async () => {
-            const drinksReponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s");
-            const drinksReponseData = await drinksReponse.json();
+            const cocktailsResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
+            const cocktailsResponseData = await cocktailsResponse.json();
 
-            setDrinks(drinksReponseData);
+            setCocktails(cocktailsResponseData.drinks);
         })();
     }, []);
-
-    console.log(drinks);
+    console.log(cocktails);
 
     return (
         <>
             <Header />
-            <h1>Nos verres</h1>
+            <h1>Nos cocktails</h1>
             <div>
-            {drinks ? (
+            {cocktails ? (
                     <>
-                        {drinks.drinks.map((drink) => {
+                        {cocktails.map((cocktail) => {
                             return (
                                 <>
-                                <DrinkCard drink={drink} />
+                                <DrinkCard drink={cocktail} />
                                 </>
                             );
                         })}
@@ -46,7 +46,6 @@ const AllDrinksPage = () => {
         </>
         
     );
-
 }
 
-export default AllDrinksPage;
+export default AllCoocktailsPage;
